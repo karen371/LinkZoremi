@@ -1,0 +1,419 @@
+/* ===========================
+   AMIGURUMIS ZOREMI ENTREHILOS
+   Paleta Otoñal / Acuarela
+   =========================== */
+
+:root {
+    --cream: #FDF6EC;
+    --cream-light: #FFF9F0;
+    --warm-brown: #8B5E3C;
+    --warm-brown-dark: #6B4226;
+    --pumpkin: #C87533;
+    --gold: #C49A3C;
+    --gold-light: #D4AA4C;
+    --moss-green: #6B8E4E;
+    --burgundy: #8B2D3A;
+    --soft-orange: #E8A960;
+    --text-dark: #4A3728;
+    --text-medium: #7A6250;
+    --text-light: #A08B78;
+    --card-bg: rgba(253, 246, 236, 0.85);
+    --card-border: rgba(200, 117, 51, 0.2);
+    --card-hover-bg: rgba(253, 246, 236, 0.95);
+    --card-shadow: rgba(139, 94, 60, 0.12);
+    --card-shadow-hover: rgba(139, 94, 60, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Lora', Georgia, serif;
+}
+
+/* === Background === */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+}
+
+/* === Floating decorative leaves === */
+.floating-leaf {
+    position: fixed;
+    font-size: 1.6rem;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    animation: floatDown linear infinite;
+}
+
+.leaf-1 { left: 5%;  animation-duration: 12s; animation-delay: 0s;   font-size: 1.4rem; }
+.leaf-2 { left: 15%; animation-duration: 15s; animation-delay: 2s;   font-size: 1.8rem; }
+.leaf-3 { left: 30%; animation-duration: 18s; animation-delay: 5s;   font-size: 1.3rem; }
+.leaf-4 { left: 50%; animation-duration: 14s; animation-delay: 1s;   font-size: 1.6rem; }
+.leaf-5 { left: 65%; animation-duration: 16s; animation-delay: 4s;   font-size: 1.2rem; }
+.leaf-6 { left: 78%; animation-duration: 13s; animation-delay: 3s;   font-size: 1.5rem; }
+.leaf-7 { left: 88%; animation-duration: 17s; animation-delay: 6s;   font-size: 1.7rem; }
+.leaf-8 { left: 42%; animation-duration: 19s; animation-delay: 8s;   font-size: 1.1rem; }
+
+@keyframes floatDown {
+    0% {
+        transform: translateY(-10vh) rotate(0deg) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg) translateX(60px);
+        opacity: 0;
+    }
+}
+
+/* === Main Container === */
+.container {
+    width: 100%;
+    max-width: 440px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+}
+
+/* === Profile / Header === */
+.profile {
+    text-align: center;
+    animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-img-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1.2rem;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--pumpkin), var(--gold), var(--moss-green), var(--soft-orange));
+    position: relative;
+    box-shadow: 
+        0 8px 25px var(--card-shadow),
+        0 0 0 4px var(--cream);
+    animation: gentlePulse 4s ease-in-out infinite;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--cream);
+    background: var(--cream-light);
+}
+
+/* === Brand Name === */
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.brand-top {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-medium);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.brand-main {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--warm-brown-dark);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.brand-main::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 2px auto 0;
+}
+
+.brand-bottom {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-light);
+    letter-spacing: 4px;
+    margin-top: 4px;
+}
+
+/* === Quote === */
+.profile-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-top: 0.8rem;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.profile-quote::before {
+    content: '✿';
+    display: block;
+    font-style: normal;
+    color: var(--soft-orange);
+    opacity: 0.5;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+/* === Links === */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 1.1rem 1.4rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-dark);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.link-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%);
+    transition: 0.6s ease-in-out;
+}
+
+/* TikTok specific */
+.tiktok::before {
+    background: linear-gradient(to bottom, var(--pumpkin), var(--gold));
+}
+
+/* Instagram specific */
+.instagram::before {
+    background: linear-gradient(to bottom, var(--burgundy), var(--soft-orange));
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    background: var(--card-hover-bg);
+    border-color: rgba(200, 117, 51, 0.35);
+    box-shadow: 0 12px 30px -5px var(--card-shadow-hover);
+}
+
+.link-card:hover::before {
+    opacity: 1;
+}
+
+.link-card:hover::after {
+    transform: translateX(100%);
+}
+
+.link-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.tiktok .link-icon {
+    background: linear-gradient(135deg, rgba(200, 117, 51, 0.12), rgba(196, 154, 60, 0.12));
+    color: var(--pumpkin);
+}
+
+.instagram .link-icon {
+    background: linear-gradient(135deg, rgba(139, 45, 58, 0.12), rgba(232, 169, 96, 0.12));
+    color: var(--burgundy);
+}
+
+.tiktok:hover .link-icon {
+    background: linear-gradient(135deg, rgba(200, 117, 51, 0.25), rgba(196, 154, 60, 0.25));
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.instagram:hover .link-icon {
+    background: linear-gradient(135deg, rgba(139, 45, 58, 0.25), rgba(232, 169, 96, 0.25));
+    transform: scale(1.08) rotate(3deg);
+}
+
+.link-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 2px;
+}
+
+.link-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: -0.2px;
+}
+
+.link-subtitle {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.link-arrow {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    opacity: 0.4;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+}
+
+.link-card:hover .link-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+    color: var(--pumpkin);
+}
+
+/* === Footer === */
+.footer {
+    text-align: center;
+    padding-top: 0.5rem;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.footer-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+}
+
+.footer-line {
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.footer-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* === Animations === */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentlePulse {
+    0%, 100% { box-shadow: 0 8px 25px var(--card-shadow), 0 0 0 4px var(--cream); }
+    50% { box-shadow: 0 8px 35px var(--card-shadow-hover), 0 0 0 6px rgba(253, 246, 236, 0.8); }
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem 1.5rem;
+    }
+    .profile-img-container {
+        width: 120px;
+        height: 120px;
+    }
+    .brand-main {
+        font-size: 2.4rem;
+    }
+    .brand-top {
+        font-size: 0.9rem;
+    }
+    .floating-leaf {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        max-width: 440px;
+    }
+}
