@@ -1,0 +1,339 @@
+/* ===========================
+   CATÁLOGO ZOREMI ENTREHILOS
+   Extiende el estilo de style.css
+   =========================== */
+
+body {
+    display: block;
+}
+
+.catalog-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+}
+
+/* === Header === */
+.catalog-header {
+    text-align: center;
+    animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-medium);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.85rem;
+    text-decoration: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.back-link:hover {
+    transform: translateY(-2px);
+    color: var(--pumpkin);
+    border-color: rgba(200, 117, 51, 0.35);
+    box-shadow: 0 8px 20px -5px var(--card-shadow-hover);
+}
+
+.header-avatar {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--cream);
+    padding: 3px;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(135deg, var(--pumpkin), var(--gold), var(--moss-green));
+    box-shadow: 0 6px 18px var(--card-shadow);
+}
+
+.page-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--warm-brown-dark);
+    line-height: 1.1;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 4px auto 0;
+}
+
+.page-subtitle {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* === Filtros === */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+}
+
+.chip {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.8rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.chip:hover {
+    transform: translateY(-2px);
+    border-color: rgba(200, 117, 51, 0.35);
+    color: var(--pumpkin);
+}
+
+.chip.active {
+    background: linear-gradient(135deg, var(--pumpkin), var(--gold));
+    border-color: transparent;
+    color: #FFF9F0;
+    box-shadow: 0 6px 16px -4px var(--card-shadow-hover);
+}
+
+/* === Grid de productos === */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1.1rem;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 15px var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: cardIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.product-card:nth-child(-n+12) { animation-delay: calc(var(--i, 0) * 60ms); }
+
+.product-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover-bg);
+    border-color: rgba(200, 117, 51, 0.35);
+    box-shadow: 0 14px 32px -6px var(--card-shadow-hover);
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.product-img-wrap {
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.55), transparent 55%),
+        linear-gradient(135deg, rgba(232, 169, 96, 0.22), rgba(196, 154, 60, 0.18), rgba(107, 142, 78, 0.16));
+    border-bottom: 1px solid var(--card-border);
+}
+
+.product-img {
+    font-size: 3rem;
+    filter: drop-shadow(0 4px 6px rgba(139, 94, 60, 0.25));
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--pumpkin), var(--gold));
+    color: #FFF9F0;
+    box-shadow: 0 3px 8px var(--card-shadow);
+}
+
+.product-badge.badge-fav {
+    background: linear-gradient(135deg, var(--burgundy), var(--soft-orange));
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.3rem;
+    padding: 0.9rem 1rem 1rem;
+}
+
+.product-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: -0.2px;
+}
+
+.product-desc {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--text-light);
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.product-price {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warm-brown);
+}
+
+.order-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.05rem;
+    color: var(--moss-green);
+    background: linear-gradient(135deg, rgba(107, 142, 78, 0.15), rgba(107, 142, 78, 0.08));
+    border: 1px solid rgba(107, 142, 78, 0.25);
+    transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+    background: linear-gradient(135deg, var(--moss-green), var(--gold-light));
+    color: #FFF9F0;
+    transform: scale(1.12) rotate(5deg);
+    box-shadow: 0 6px 14px -3px var(--card-shadow-hover);
+}
+
+/* === Encargo personalizado === */
+.custom-order {
+    text-align: center;
+    padding: 1.8rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px dashed rgba(200, 117, 51, 0.4);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 15px var(--card-shadow);
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s both;
+}
+
+.custom-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--warm-brown-dark);
+}
+
+.custom-text {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--text-medium);
+    margin-top: 0.4rem;
+}
+
+.custom-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.1rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #FFF9F0;
+    background: linear-gradient(135deg, var(--moss-green), var(--warm-brown));
+    box-shadow: 0 8px 20px -6px var(--card-shadow-hover);
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 26px -6px var(--card-shadow-hover);
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+    .catalog-container {
+        padding: 1.5rem 1rem 2rem;
+        gap: 1.5rem;
+    }
+    .page-title {
+        font-size: 1.8rem;
+    }
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.8rem;
+    }
+}

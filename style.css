@@ -266,6 +266,16 @@ body {
     background: linear-gradient(to bottom, var(--moss-green), var(--gold-light));
 }
 
+/* Catálogo specific */
+.catalogo::before {
+    background: linear-gradient(to bottom, var(--pumpkin), var(--burgundy));
+}
+
+/* WhatsApp specific */
+.whatsapp::before {
+    background: linear-gradient(to bottom, var(--moss-green), var(--gold));
+}
+
 .link-card:hover {
     transform: translateY(-4px);
     background: var(--card-hover-bg);
@@ -309,6 +319,16 @@ body {
     color: var(--moss-green);
 }
 
+.catalogo .link-icon {
+    background: linear-gradient(135deg, rgba(200, 117, 51, 0.12), rgba(139, 45, 58, 0.12));
+    color: var(--pumpkin);
+}
+
+.whatsapp .link-icon {
+    background: linear-gradient(135deg, rgba(107, 142, 78, 0.15), rgba(107, 142, 78, 0.08));
+    color: var(--moss-green);
+}
+
 .tiktok:hover .link-icon {
     background: linear-gradient(135deg, rgba(200, 117, 51, 0.25), rgba(196, 154, 60, 0.25));
     transform: scale(1.08) rotate(-3deg);
@@ -322,6 +342,16 @@ body {
 .facebook:hover .link-icon {
     background: linear-gradient(135deg, rgba(107, 142, 78, 0.25), rgba(212, 170, 76, 0.25));
     transform: scale(1.08) rotate(-3deg);
+}
+
+.catalogo:hover .link-icon {
+    background: linear-gradient(135deg, rgba(200, 117, 51, 0.25), rgba(139, 45, 58, 0.25));
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.whatsapp:hover .link-icon {
+    background: linear-gradient(135deg, rgba(107, 142, 78, 0.28), rgba(107, 142, 78, 0.18));
+    transform: scale(1.08) rotate(3deg);
 }
 
 .link-content {

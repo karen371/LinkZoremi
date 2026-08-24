@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Amigurumis Zoremi Entrehilos</title>
+    <meta name="description" content="Catálogo de amigurumis tejidos a mano de Amigurumis Zoremi Entrehilos. Encuentra tu compañero tejido con amor y agenda tu pedido por WhatsApp.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalogo.css">
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container"></div>
+
+    <!-- Decorative floating elements -->
+    <div class="floating-leaf leaf-1">🍂</div>
+    <div class="floating-leaf leaf-2">🍁</div>
+    <div class="floating-leaf leaf-3">🌻</div>
+    <div class="floating-leaf leaf-4">🧶</div>
+    <div class="floating-leaf leaf-5">🍂</div>
+    <div class="floating-leaf leaf-6">🌰</div>
+    <div class="floating-leaf leaf-7">🍁</div>
+    <div class="floating-leaf leaf-8">🧶</div>
+
+    <div class="catalog-container">
+        <header class="catalog-header">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+            <img src="avatar.png" alt="Zoremi - Zorrito mascota" class="header-avatar">
+            <h1 class="page-title">Catálogo</h1>
+            <p class="page-subtitle">Tejidos a mano, uno por uno 🤎</p>
+
+            <nav class="filters" aria-label="Filtrar productos por categoría">
+                <button class="chip active" data-filter="todos">Todos</button>
+                <button class="chip" data-filter="animales">Animalitos</button>
+                <button class="chip" data-filter="personajes">Personajes</button>
+                <button class="chip" data-filter="mini">Mini</button>
+                <button class="chip" data-filter="accesorios">Accesorios</button>
+            </nav>
+        </header>
+
+        <main class="products-grid" id="products-grid">
+
+            <article class="product-card" data-category="personajes">
+                <div class="product-img-wrap">
+                    <span class="product-badge">Nuevo</span>
+                    <span class="product-img"><img src="img/mulan.png" alt="Muñeca de Mulan"></span>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">Muñeca de Mulan</h2>
+                    <p class="product-desc">Personaje tejido</p>
+                    <div class="product-footer">
+                        <!-- <span class="product-price">S/ 95</span> -->
+                        <a class="order-btn" href="https://wa.me/5681720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Mu%C3%B1eca%20de%20Mulan" target="_blank" rel="noopener" aria-label="Pedir Muñeca de Mulan por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="personajes">
+                <div class="product-img-wrap">
+                    <span class="product-badge">Nuevo</span>
+                    <span class="product-img"><img src="img/deadpool.png" alt="Deadpool"></span>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">Deadpool</h2>
+                    <p class="product-desc">Personaje tejido</p>
+                    <div class="product-footer">
+                        <!-- <span class="product-price">S/ 85</span> -->
+                        <a class="order-btn" href="https://wa.me/5681720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Deadpool" target="_blank" rel="noopener" aria-label="Pedir Deadpool por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="personajes">
+                <div class="product-img-wrap">
+                    <span class="product-badge">Nuevo</span>
+                    <span class="product-img"><img src="img/frutillita.png" alt="Frutillita"></span>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">Frutillita</h2>
+                    <p class="product-desc">Personaje tejido</p>
+                    <div class="product-footer">
+                        <!-- <span class="product-price">S/ 68</span> -->
+                        <a class="order-btn" href="https://wa.me/5681720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Frutillita" target="_blank" rel="noopener" aria-label="Pedir Frutillita por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+
+        <section class="custom-order">
+            <h2 class="custom-title">¿No encuentras lo que buscas?</h2>
+            <p class="custom-text">Hacemos encargos personalizados, tejidos especialmente para ti.</p>
+            <a class="custom-btn" href="https://wa.me/5681720658?text=Hola%20Zoremi%20Entrehilos%2C%20quiero%20agendar%20un%20encargo%20personalizado%20%F0%9F%A7%B6" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Agendar mi pedido</a>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-decoration">
+                <span>🧶</span>
+                <span class="footer-line"></span>
+                <span>🦊</span>
+                <span class="footer-line"></span>
+                <span>🧶</span>
+            </div>
+            <p class="footer-text">Hecho con amor y muchos hilos 🤎</p>
+        </footer>
+    </div>
+
+    <script>
+        const chips = document.querySelectorAll('.chip');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                const cat = chip.dataset.filter;
+                document.querySelectorAll('.product-card').forEach(card => {
+                    card.style.display = (cat === 'todos' || card.dataset.category === cat) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
