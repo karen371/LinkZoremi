@@ -75,7 +75,7 @@ const productos = [
         id: 7,
         nombre: "Zoro",
         categoria: "personajes",
-        imagen: "./Img/zoro.jpg",
+        imagen: "./Img/Zoro.jpg",
         precio: "$13.000",
         tamaño: "10 cm",
         material: "Hilo de algodón",

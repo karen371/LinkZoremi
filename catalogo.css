@@ -221,6 +221,7 @@ body {
     flex-grow: 1;
     gap: 0.3rem;
     padding: 0.9rem 1rem 1rem;
+    justify-content: space-between;
 }
 
 .product-name {
@@ -229,6 +230,9 @@ body {
     font-weight: 600;
     color: var(--text-dark);
     letter-spacing: -0.2px;
+    min-height: 2.4em;
+    display: flex;
+    align-items: center;
 }
 
 .product-desc {
@@ -241,7 +245,7 @@ body {
 
 .product-meta {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin: 0.4rem 0;
 }
@@ -265,7 +269,7 @@ body {
 .product-footer {
     display: flex;
     justify-content: center;
-    margin-top: 0.8rem;
+    margin-top: auto;
     padding-top: 0.8rem;
     border-top: 1px solid rgba(139, 94, 60, 0.1);
 }
