@@ -42,74 +42,7 @@
         </header>
 
         <main class="products-grid" id="products-grid">
-
-            <article class="product-card" data-category="personajes">
-                <div class="product-img-wrap">
-                    <span class="product-badge">Disponible</span>
-                    <span class="product-img"><img src="./Img/mulan.png" alt="Muñeca de Mulan"></span>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Muñeca de Mulan</h2>
-                    <div class="product-footer">
-                        <!-- <span class="product-price">S/ 95</span> -->
-                        <a class="order-btn" href="https://wa.me/56981720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Mu%C3%B1eca%20de%20Mulan" target="_blank" rel="noopener" aria-label="Pedir Muñeca de Mulan por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="product-card" data-category="personajes">
-                <div class="product-img-wrap">
-                    <span class="product-badge">Disponible</span>
-                    <span class="product-img"><img src="./Img/deadpool.png" alt="Deadpool"></span>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Deadpool</h2>
-            <div class="product-footer">
-                        <!-- <span class="product-price">S/ 85</span> -->
-                        <a class="order-btn" href="https://wa.me/56981720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Deadpool" target="_blank" rel="noopener" aria-label="Pedir Deadpool por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="product-card" data-category="personajes">
-                <div class="product-img-wrap">
-                    <span class="product-badge">Disponible</span>
-                    <span class="product-img"><img src="./Img/frutillita.png" alt="Frutillita"></span>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Frutillita</h2>
-                    <div class="product-footer">
-                        <!-- <span class="product-price">S/ 68</span> -->
-                        <a class="order-btn" href="https://wa.me/56981720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Frutillita" target="_blank" rel="noopener" aria-label="Pedir Frutillita por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </article>
-            <article class="product-card" data-category="personajes">
-                <div class="product-img-wrap">
-                    <span class="product-badge">Disponible</span>
-                    <span class="product-img"><img src="./Img/Tomioka.png" alt="Giyu Tomioka"></span>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Giyu Tomioka</h2>
-                    <div class="product-footer">
-                        <!-- <span class="product-price">S/ 68</span> -->
-                        <a class="order-btn" href="https://wa.me/56981720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Frutillita" target="_blank" rel="noopener" aria-label="Pedir Frutillita por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </article>
-            <article class="product-card" data-category="personajes">
-                <div class="product-img-wrap">
-                    <span class="product-badge">Disponible</span>
-                    <span class="product-img"><img src="./Img/Tokito.png" alt="Tokito"></span>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Tokito</h2>
-                    <div class="product-footer">
-                        <!-- <span class="product-price">S/ 68</span> -->
-                        <a class="order-btn" href="https://wa.me/56981720658?text=Hola%20Zoremi!%20Me%20interesa%20el%20amigurumi%20%F0%9F%A7%B6%20Frutillita" target="_blank" rel="noopener" aria-label="Pedir Frutillita por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </article>
+            <!-- JavaScript inyectará las cards aquí -->
         </main>
 
         <section class="custom-order">
@@ -130,18 +63,50 @@
         </footer>
     </div>
 
-    <script>
-        const chips = document.querySelectorAll('.chip');
-        chips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                chips.forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-                const cat = chip.dataset.filter;
-                document.querySelectorAll('.product-card').forEach(card => {
-                    card.style.display = (cat === 'todos' || card.dataset.category === cat) ? '' : 'none';
-                });
-            });
-        });
-    </script>
+    <!-- Modal del Producto -->
+    <div class="product-modal-overlay" id="productModal">
+        <div class="product-modal-content">
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Cerrar modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-img-wrap">
+                <img id="modalImg" src="" alt="Imagen del producto">
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-product-name" id="modalTitle">Nombre</h2>
+                <div class="modal-product-meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Tamaño</span>
+                        <span class="meta-value" id="modalSize"></span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Precio</span>
+                        <span class="meta-value price" id="modalPrice"></span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Material</span>
+                        <span class="meta-value" id="modalMaterial"></span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Elaboración</span>
+                        <span class="meta-value">Hecho a mano</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Personalizable</span>
+                        <span class="meta-value" id="modalCustom"></span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Estado</span>
+                        <span class="meta-value status" id="modalStatus"></span>
+                    </div>
+                </div>
+                <p class="modal-product-desc" id="modalDesc">Amigurumi tejido a mano.</p>
+                <a class="modal-order-btn" id="modalWspLink" href="#" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> Consultar / Comprar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts externos -->
+    <script src="catalogo.js"></script>
 </body>
 </html>
